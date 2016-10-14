@@ -3,7 +3,7 @@
  */
 import assign from 'lodash/assign';
 import callApi from './/fetch';
-import errorHandler from '../helper/errorHandler';
+import errorHandler from '../util/errorHandler';
 
 export const CALL_API = Symbol('Call API');
 

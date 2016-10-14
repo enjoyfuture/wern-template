@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import {Link} from 'react-router';
 import classNames from 'classnames/bind';
 import PersonItem from './PersonItem';
-import bootstrap from '../../../helper/bootstrapCss';
+import bootstrap from '../../../util/bootstrapCss';
 import style from '../person'
 //图片
 import noItems from '../../common/images/no_items.png';

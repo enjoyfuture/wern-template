@@ -4,7 +4,7 @@ import EntryBox from './EntryBox';
 import MainSection from './MainSection';
 import Scoreboard from './Scoreboard';
 import styles from '../sass/index';
-import bootstrap from '../../../helper/bootstrapCss';
+import bootstrap from '../../../util/bootstrapCss';
 
 const cx = classNames.bind(styles);
 

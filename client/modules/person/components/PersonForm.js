@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import Immutable from 'immutable';
-import callApi from '../../../helper/fetch';
-import bootstrap from '../../../helper/bootstrapCss';
+import callApi from '../../../util/fetch';
+import bootstrap from '../../../util/bootstrapCss';
 
 class PersonForm extends Component {
   static contextTypes = {

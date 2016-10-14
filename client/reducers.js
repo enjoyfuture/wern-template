@@ -3,7 +3,7 @@
  */
 
 import {combineReducers} from 'redux-immutable';
-import routing from './helper/routing';
+import routing from './util/routing';
 import toast from './modules/common/reducer';
 import home from './modules/home/reducer';
 import film from './modules/film/reducer';

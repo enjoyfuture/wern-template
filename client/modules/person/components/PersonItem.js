@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import classNames from 'classnames/bind';
-import callApi from '../../../helper/fetch';
+import callApi from '../../../util/fetch';
 import style from '../person'
 const cx = classNames.bind(style);
 

@@ -1,5 +1,5 @@
 import * as types from './constant';
-import callApi from '../../helper/fetch';
+import callApi from '../../util/fetch';
 
 // 投票主题
 export function enterTopic(content) {
