@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import classNames from 'classnames/bind';
 import Immutable from 'immutable';
-import bootstrap from '../../../helper/bootstrapCss';
+import bootstrap from '../../../util/bootstrapCss';
 import filmStyle from '../index'
 const cx = classNames.bind(filmStyle);
 

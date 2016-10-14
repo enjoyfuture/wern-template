@@ -3,7 +3,7 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import classNames from 'classnames/bind';
 import * as homeAction from './action';
-import bootstrap from '../../helper/bootstrapCss';
+import bootstrap from '../../util/bootstrapCss';
 import styles from './index';
 
 const cx = classNames.bind(styles);

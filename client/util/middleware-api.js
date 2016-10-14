@@ -2,7 +2,7 @@
  * 中间件，用来统一处理 fetch 请求
  */
 import assign from 'lodash/assign';
-import callApi from '../helper/fetch';
+import callApi from './/fetch';
 import errorHandler from '../helper/errorHandler';
 
 export const CALL_API = Symbol('Call API');

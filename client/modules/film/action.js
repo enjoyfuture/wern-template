@@ -1,5 +1,5 @@
 import * as FilmActionTypes from './constant';
-import {CALL_API} from '../../helper/middleware-api';
+import {CALL_API} from '../../util/middleware-api';
 
 const {
   ALL_FILM_REQUEST, ALL_FILM_SUCCESS, ALL_FILM_FAILURE, ALL_FILM_CLEAN,

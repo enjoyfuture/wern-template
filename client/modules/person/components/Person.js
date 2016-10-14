@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-import bootstrap from '../../../helper/bootstrapCss';
+import bootstrap from '../../../util/bootstrapCss';
 
 const Person = ({children, location, personAction, person}) => {
 

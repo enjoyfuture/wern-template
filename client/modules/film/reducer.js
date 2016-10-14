@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux-immutable';
-import process from '../../helper/processReducer';
+import process from '../../util/processReducer';
 import * as FilmActionTypes from './constant';
 
 const {

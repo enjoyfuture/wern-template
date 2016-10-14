@@ -1,4 +1,4 @@
-import process from '../../helper/processReducer';
+import process from '../../util/processReducer';
 import * as PersonActionTypes from './constant';
 
 const {

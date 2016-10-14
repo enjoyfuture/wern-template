@@ -2,7 +2,7 @@ import {
   PERSON_REQUEST, PERSON_SUCCESS, PERSON_FAILURE, PERSON_CLEAN,
   PERSON_UPDATE, PERSON_DELETE, PERSON_ADD
 } from './constant';
-import {CALL_API} from '../../helper/middleware-api';
+import {CALL_API} from '../../util/middleware-api';
 
 function fetchPersonList(currentPage, clean) {
   return {
