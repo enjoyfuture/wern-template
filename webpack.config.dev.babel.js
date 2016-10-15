@@ -1,4 +1,5 @@
 import path from 'path';
+import fs from 'fs';
 import webpack from 'webpack';
 import HtmlwebpackPlugin from 'html-webpack-plugin';
 import precss from 'precss';
@@ -6,12 +7,19 @@ import autoprefixer from 'autoprefixer';
 
 const ip = 'localhost';
 const port = 9090;
-
 const hotDevServer = 'webpack/hot/dev-server';
 // https://github.com/webpack/webpack-dev-server
 const webpackDevServer = 'webpack-dev-server/client?http://localhost:9090';
-
 const appPath = path.resolve(__dirname, 'client');
+
+//判断 dll 文件是否已生成
+let dllExist = false;
+try {
+  fs.statSync(path.resolve(appPath, 'dist', 'vendor.dll.js'));
+  dllExist = false;
+} catch (e) {
+  dllExist = false;
+}
 
 const webpackConfig = {
   cache: true, //开启缓存,增量编译
@@ -71,10 +79,10 @@ const webpackConfig = {
     loaders: [
       // https://github.com/MoOx/eslint-loader
       /*{
-        test: /\.jsx?$/,
-        exclude: /node_modules.*!/,
-        loader: 'eslint'
-      },*/
+       test: /\.jsx?$/,
+       exclude: /node_modules.*!/,
+       loader: 'eslint'
+       },*/
       {
         test: /\.jsx?$/,
         loader: 'babel', // 'babel-loader' is also a legal name to reference
@@ -91,11 +99,11 @@ const webpackConfig = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader?modules!postcss-loader?pack=cleaner',
+        loader: 'style-loader!css-loader?modules&localIdentName=[name]_[local]_[hash:base64:5]!postcss-loader?pack=cleaner',
       },
       {
         test: /\.scss$/,
-        loader: 'style-loader!css-loader?modules!postcss-loader?pack=cleaner!sass-loader',
+        loader: 'style-loader!css-loader?modules&localIdentName=[name]_[local]_[hash:base64:5]!postcss-loader?pack=cleaner!sass-loader',
       },
       {
         test: /\.(mp4|ogg)$/,
@@ -111,13 +119,6 @@ const webpackConfig = {
       'process.env': {
         'NODE_ENV': JSON.stringify('development'),
       }
-    }),
-    new webpack.DllReferencePlugin({
-      context: __dirname,
-      /**
-       * 在这里引入 manifest 文件
-       */
-      manifest: require('./client/dist/vendor-manifest.json')
     }),
     new webpack.LoaderOptionsPlugin({
       options: {
@@ -145,6 +146,17 @@ const webpackConfig = {
 // https://www.npmjs.com/package/html-webpack-plugin
 const entry = webpackConfig.entry;
 
+if (dllExist) {
+  webpackConfig.plugins.push(
+    new webpack.DllReferencePlugin({
+      context: __dirname,
+      /**
+       * 在这里引入 manifest 文件
+       */
+      manifest: require('./client/dist/vendor-manifest.json')
+    }),
+  );
+}
 // 为 HtmlwebpackPlugin 设置配置项，与 entry 键对应，根据需要设置其参数值
 const htmlwebpackPluginConfig = {
   index: {

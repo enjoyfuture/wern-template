@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import styles from './index';
+import styles from './about';
 const cx = classNames.bind(styles);
 
 import reactLogo from './images/react-logo.svg';

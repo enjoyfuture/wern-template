@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import classNames from 'classnames/bind';
 import * as homeAction from './action';
 import bootstrap from '../../util/bootstrapCss';
-import styles from './index';
+import styles from './home';
 
 const cx = classNames.bind(styles);
 
@@ -12,11 +12,17 @@ class Home extends Component {
   static propTypes = {
     home: PropTypes.object,
     homeAction: PropTypes.object,
+    commonAction: PropTypes.object,
   };
 
   helloHandle = (e) => {
     e.stopPropagation();
     this.props.homeAction.hello('开启 React Router Redux Immutable 之旅吧！');
+  };
+
+  toastHandle = (e) => {
+    e.stopPropagation();
+    this.props.commonAction.setToast('你好，这是一个 Toast，来体验 React 的美妙之处吧。希望能给你带去快乐！');
   };
 
   render() {
@@ -29,9 +35,14 @@ class Home extends Component {
         <hr className={bootstrap('m-t-2', 'm-b-2')}/>
         <div>
           <h3 className={bootstrap('m-b-1')}>{this.props.home.get('content')}</h3>
-          <button className={bootstrap('btn', 'btn-info')}
-                  onClick={this.helloHandle}>欢迎您来到这里
-          </button>
+          <div className={cx('wern-btn-group')}>
+            <button className={bootstrap('btn', 'btn-info')}
+                    onClick={this.helloHandle}>欢迎您来到这里
+            </button>
+            <button className={bootstrap('', 'btn', 'btn-primary')}
+                    onClick={this.toastHandle}>Toast
+            </button>
+          </div>
         </div>
       </div>
     );

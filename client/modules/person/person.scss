@@ -1,16 +1,11 @@
 @import "../common/scss/components/loading";
+@import "../common/scss/components/btn";
 
 .no-items {
   width: 8rem;
   height: 8rem;
   display: block;
   margin: 0 auto;
-}
-
-.person-btn-group {
-  button + button {
-    margin-left: 1rem;
-  }
 }
 
 .link-group > a {

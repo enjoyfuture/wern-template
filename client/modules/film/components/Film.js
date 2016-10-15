@@ -3,8 +3,8 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import classNames from 'classnames/bind';
 import Immutable from 'immutable';
 import bootstrap from '../../../util/bootstrapCss';
-import filmStyle from '../index'
-const cx = classNames.bind(filmStyle);
+import styles from '../film'
+const cx = classNames.bind(styles);
 
 class Film extends Component {
   static propTypes = {

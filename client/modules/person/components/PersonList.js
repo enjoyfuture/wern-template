@@ -3,11 +3,11 @@ import {Link} from 'react-router';
 import classNames from 'classnames/bind';
 import PersonItem from './PersonItem';
 import bootstrap from '../../../util/bootstrapCss';
-import style from '../person'
+import styles from '../person'
 //图片
 import noItems from '../../common/images/no_items.png';
 
-const cx = classNames.bind(style);
+const cx = classNames.bind(styles);
 
 class PersonList extends Component {
   static propTypes = {
@@ -95,7 +95,7 @@ class PersonList extends Component {
           }
           </tbody>
         </table>
-        <div className={cx('person-btn-group')}>
+        <div className={cx('wern-btn-group')}>
           <button type="button" className={bootstrap('btn', 'btn-primary')} disabled={lastPage}
                   onClick={this.loadMore}>Load More
           </button>

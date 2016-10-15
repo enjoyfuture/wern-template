@@ -1,8 +1,8 @@
 import React, {Component, PropTypes} from 'react';
 import classNames from 'classnames/bind';
 import callApi from '../../../util/fetch';
-import style from '../person'
-const cx = classNames.bind(style);
+import styles from '../person'
+const cx = classNames.bind(styles);
 
 class PersonItem extends Component {
   static propTypes = {

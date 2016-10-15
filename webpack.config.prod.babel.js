@@ -57,7 +57,7 @@ const webpackConfig = {
         test: /\.css$/,
         loader: extractCSS.extract({
           fallbackLoader: 'style-loader',
-          loader: 'css-loader?modules&localIdentName=[hash:base64]!postcss-loader?pack=cleaner'
+          loader: 'css-loader?modules&localIdentName=[name]_[local]_[hash:base64:5]!postcss-loader?pack=cleaner'
         }),
       },
       {
@@ -65,7 +65,7 @@ const webpackConfig = {
         exclude: /node_modules/,
         loader: extractSCSS.extract({
           fallbackLoader: 'style-loader',
-          loader: 'css-loader?modules&localIdentName=[hash:base64]!postcss-loader?pack=cleaner!sass-loader'
+          loader: 'css-loader?modules&localIdentName=[name]_[local]_[hash:base64:5]!postcss-loader?pack=cleaner!sass-loader'
         })
       }, {
         test: /\.json$/,
