@@ -4,7 +4,7 @@
 
 import {combineReducers} from 'redux-immutable';
 import routing from './util/routing';
-import toast from './modules/common/reducer';
+import toast from './modules/app/reducer';
 import home from './modules/home/reducer';
 import film from './modules/film/reducer';
 import vote from './modules/vote/reducer';

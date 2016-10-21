@@ -112,7 +112,7 @@
     "yoda": 2,//不允许使用 yoda 条件表达式，常量值在前的比较表达式，比如： if(1 === a){ }
 
     // Variables
-    "init-declarations": 2,//声明变量的时候赋值，还是在其他地方赋值，我们可以关闭该规则
+    //"init-declarations": 2,//声明变量的时候赋值，还是在其他地方赋值，我们可以关闭该规则
     "no-catch-shadow": 2,//在IE8或更早的浏览器中，在catch语句中引入的变量 e 会调用全局已定义的变量 e
     "no-delete-var": 2,//不能删除变量，而只能删除属性
     "no-label-var": 2,//使用标签label语句时，不要跟变量同名，建议不要使用标签
@@ -304,11 +304,38 @@
     //"react/jsx-space-before-closing": 2, // 在关闭标签前是否加一空格
     "react/jsx-uses-react": 2,//React声明了而没有被调用
     "react/jsx-uses-vars": 2, //jsx组件被定义而没有被调用
-    "react/jsx-wrap-multilines": 2 //多行 jsx 表达式应该用 () 包裹起来
+    "react/jsx-wrap-multilines": 2, //多行 jsx 表达式应该用 () 包裹起来
 
     // eslint-plugin-flow-vars rule
     //"flowtype/boolean-style": 2,
     //"flowtype/define-flow-type": 2
+
+    // eslint-plugin-ava rule
+    "ava/assertion-arguments": "error",
+    "ava/assertion-message": ["off", "always"],
+    "ava/max-asserts": ["off", 5],
+    "ava/no-async-fn-without-await": "error",
+    "ava/no-cb-test": "off",
+    "ava/no-duplicate-modifiers": "error",
+    "ava/no-identical-title": "error",
+    "ava/no-ignored-test-files": "error",
+    "ava/no-invalid-end": "error",
+    "ava/no-nested-tests": "error",
+    "ava/no-only-test": "error",
+    "ava/no-skip-assert": "error",
+    "ava/no-skip-test": "error",
+    "ava/no-statement-after-end": "error",
+    "ava/no-todo-implementation": "error",
+    "ava/no-todo-test": "warn",
+    "ava/no-unknown-modifiers": "error",
+    //"ava/prefer-async-await": "error",
+    "ava/prefer-power-assert": "off",
+    "ava/test-ended": "error",
+    "ava/test-title": ["error", "if-multiple"],
+    "ava/use-t-well": "error",
+    "ava/use-t": "error",
+    "ava/use-test": "error",
+    "ava/use-true-false": "error"
   },
   "parser": "babel-eslint",//指定默认解析器
   "env": {
@@ -319,6 +346,8 @@
   "ecmaVersion": 6,
   "sourceType": "module",
   "parserOptions": {
+    "ecmaVersion": 7,
+    "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true// enable JSX
     }
@@ -330,13 +359,14 @@
   ],
   "plugins": [//定义第三方插件
     "flowtype",
-    "react"
+    "react",
+    "ava"
   ],
   "settings": {//设置
     "react": {
       "createClass": "createClass", // Regex for Component Factory to use, default to "createClass"
       "pragma": "React",  // Pragma to use, default to "React"
-      "version": "15.3.1" // React version, default to the latest React stable release
+      "version": "15.3.2" // React version, default to the latest React stable release
     },
     "sharedData": "sharedName"
   },

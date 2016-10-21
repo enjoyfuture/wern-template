@@ -3,9 +3,9 @@ import {Link} from 'react-router';
 import classNames from 'classnames/bind';
 import PersonItem from './PersonItem';
 import bootstrap from '../../../util/bootstrapCss';
-import styles from '../person'
+import styles from '../person.scss'
 //图片
-import noItems from '../../common/images/no_items.png';
+import noItems from '../../app/images/no_items.png';
 
 const cx = classNames.bind(styles);
 

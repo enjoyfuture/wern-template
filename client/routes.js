@@ -1,6 +1,6 @@
 import React from 'react'
 import {Route, IndexRoute} from 'react-router'
-import App from './containers/App';
+import App from './modules/app/AppPage';
 
 if (typeof require.ensure !== 'function') {
   require.ensure = function requireModule(deps, callback) {
